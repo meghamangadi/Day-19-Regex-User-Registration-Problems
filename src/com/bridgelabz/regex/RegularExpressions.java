@@ -10,8 +10,9 @@ public class RegularExpressions {
 	public static void main(String[] args) {
 		RegularExpressions.firstName();
 		RegularExpressions.lastName();
-			}
-
+		RegularExpressions.email();
+		
+	}
 	public static void firstName() {
 
 		System.out.println("Enter Your Firstname");
@@ -47,7 +48,25 @@ public class RegularExpressions {
 		}
 
 	}
-	
+	public static void email() {
+
+		System.out.println("Enter Your Email");
+		String input = sc.next();
+
+		String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(input);
+
+		if (matcher.matches()) {
+			System.out.println("Valid email");
+		} else {
+			System.out.println("Invalid email...!");
+			System.out.println("Your Email has 3 mandatory parts (abc, bl\r\n"
+					+ "& co) and 2 optional (xyz & in) with\r\n"
+					+ "precise @ and . positions --> E.g. abc.xyz@bl.co.in");
+		}
+
+	}
 }
 
 
