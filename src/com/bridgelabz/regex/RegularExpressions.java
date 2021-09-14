@@ -8,6 +8,7 @@ public class RegularExpressions {
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
+		
 		RegularExpressions.firstName();
 		RegularExpressions.lastName();
 		RegularExpressions.email();
@@ -26,7 +27,7 @@ public class RegularExpressions {
 			System.out.println("Valid Firstname");
 		
 		} else {
-			System.out.println("Invalid Firstname...!");
+			System.out.println("Invalid Firstname....!");
 			System.out.println("Your Firstname should start with capital letter and has minimum 3 characters ");
 		}
 
@@ -43,7 +44,7 @@ public class RegularExpressions {
 		if (matcher.matches()) {
 			System.out.println("Valid Lastname");
 		} else {
-			System.out.println("Invalid Lastname...!");
+			System.out.println("Invalid Lastname....!");
 			System.out.println("Your Lastname should start with capital letter and has minimum 3 characters ");
 		}
 
