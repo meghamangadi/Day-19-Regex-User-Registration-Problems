@@ -55,7 +55,7 @@ public class RegularExpressions {
 
 	public static void email() {
 
-		System.out.println("Enter Your Email");
+		System.out.println("Enter Your Email ID");
 		String input = sc.next();
 
 		String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
@@ -97,7 +97,7 @@ public class RegularExpressions {
 
 		System.out.println("Enter Your password with following conditions :\n");
 
-		System.out.println("1)Your password must contain minimum 8 characters\n2)Should have atleast 1 Upper Case");
+		System.out.println("1)Your password must contain minimum 8 characters\n2)Should have atleast 1 UpperCase");
 		String input = sc.next();
 
 		String regex = "^(?=.*[A-Z]){1}(?=.*[a-z]).{8,}$";
@@ -109,7 +109,7 @@ public class RegularExpressions {
 			System.out.println("Valid password");
 		} else {
 			System.out.println("Invalid password...!");
-			System.out.println("Your password must contain minimum 8 characters");
+
 		}
 
 	}
