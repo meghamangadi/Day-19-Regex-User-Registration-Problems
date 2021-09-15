@@ -13,7 +13,7 @@ public class RegularExpressions {
 		RegularExpressions.lastName();
 		RegularExpressions.email();
 		RegularExpressions.mobileNumber();
-		RegularExpressions.passwordRule2();
+		RegularExpressions.passwordRule3();
 	}
 
 	public static void firstName() {
@@ -93,14 +93,15 @@ public class RegularExpressions {
 
 	}
 
-	public static void passwordRule2() {
+	public static void passwordRule3() {
 
 		System.out.println("Enter Your password with following conditions :\n");
 
-		System.out.println("1)Your password must contain minimum 8 characters\n2)Should have atleast 1 UpperCase");
+		System.out.println(
+				"1)Your password must contain minimum 8 characters\n2)Should have atleast 1 UpperCase\n3)Should have atleast 1 numeric number");
 		String input = sc.next();
 
-		String regex = "^(?=.*[A-Z]){1}(?=.*[a-z]).{8,}$";
+		String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$";
 
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(input);
