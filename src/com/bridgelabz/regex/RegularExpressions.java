@@ -12,7 +12,7 @@ public class RegularExpressions {
 		RegularExpressions.firstName();
 		RegularExpressions.lastName();
 		RegularExpressions.email();
-		
+		RegularExpressions.mobileNumber();
 	}
 	public static void firstName() {
 
@@ -65,6 +65,25 @@ public class RegularExpressions {
 			System.out.println("Your Email has 3 mandatory parts (abc, bl\r\n"
 					+ "& co) and 2 optional (xyz & in) with\r\n"
 					+ "precise @ and . positions --> E.g. abc.xyz@bl.co.in");
+		}
+
+	}
+	public static void mobileNumber() {
+
+		System.out.println("Enter Your mobileNumber");
+		String input = sc.next();
+
+		 String regex = "^[0-9]{2}{1}[6-9]{1}[0-9]{9}$";
+		
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(input);
+
+		if (matcher.matches()) {
+			System.out.println("Valid mobileNumber");
+		} else {
+			System.out.println("Invalid mobileNumber...!");
+			System.out.println("Your mobileNumber Format - E.g. 91 9919819801 - Country code follow by space and 10\r\n"
+					+ "digit number");
 		}
 
 	}
