@@ -8,12 +8,14 @@ public class RegularExpressions {
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		
+
 		RegularExpressions.firstName();
 		RegularExpressions.lastName();
 		RegularExpressions.email();
 		RegularExpressions.mobileNumber();
+		RegularExpressions.passwordRule1();
 	}
+
 	public static void firstName() {
 
 		System.out.println("Enter Your Firstname");
@@ -25,13 +27,14 @@ public class RegularExpressions {
 
 		if (matcher.matches()) {
 			System.out.println("Valid Firstname");
-		
+
 		} else {
 			System.out.println("Invalid Firstname....!");
 			System.out.println("Your Firstname should start with capital letter and has minimum 3 characters ");
 		}
 
 	}
+
 	public static void lastName() {
 
 		System.out.println("Enter Your Lastname");
@@ -49,6 +52,7 @@ public class RegularExpressions {
 		}
 
 	}
+
 	public static void email() {
 
 		System.out.println("Enter Your Email");
@@ -62,19 +66,20 @@ public class RegularExpressions {
 			System.out.println("Valid email");
 		} else {
 			System.out.println("Invalid email...!");
-			System.out.println("Your Email has 3 mandatory parts (abc, bl\r\n"
-					+ "& co) and 2 optional (xyz & in) with\r\n"
-					+ "precise @ and . positions --> E.g. abc.xyz@bl.co.in");
+			System.out.println(
+					"Your Email has 3 mandatory parts (abc, bl\r\n" + "& co) and 2 optional (xyz & in) with\r\n"
+							+ "precise @ and . positions --> E.g. abc.xyz@bl.co.in");
 		}
 
 	}
+
 	public static void mobileNumber() {
 
 		System.out.println("Enter Your mobileNumber");
 		String input = sc.next();
 
-		 String regex = "^[0-9]{2}{1}[6-9]{1}[0-9]{9}$";
-		
+		String regex = "^[0-9]{2}{1}[6-9]{1}[0-9]{9}$";
+
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(input);
 
@@ -87,6 +92,23 @@ public class RegularExpressions {
 		}
 
 	}
+
+	public static void passwordRule1() {
+
+		System.out.println("Enter Your password");
+		String input = sc.next();
+
+		String regex = "^[a-zA-Z]{8,}$";
+
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(input);
+
+		if (matcher.matches()) {
+			System.out.println("Valid password");
+		} else {
+			System.out.println("Invalid password...!");
+			System.out.println("Your password must contain minimum 8 characters");
+		}
+
+	}
 }
-
-
